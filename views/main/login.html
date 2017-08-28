@@ -31,23 +31,7 @@
     </div>
     <?php include('./views/common/script.html'); ?>
     <script type="text/javascript">
-        $('#loginBtn').click(function(){
-            $.ajax({
-                type : 'post',
-                url : '/api/login',
-                data : $('#loginForm').serialize(),
-                dataType : 'json',
-                success : function(data){
-                    if(data.code == 200){
-                        // 登录成功
-                        location.href = '/main/index';
-                    }else{
-                        alert('用户名或者密码错误');
-                    }
-                }
-            });
-            return false;
-        });
+        require(['login']);
     </script>
 </body>
 </html>
