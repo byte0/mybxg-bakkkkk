@@ -9,14 +9,6 @@
     
     <!-- 侧边栏 -->
     <div class="aside">
-        <!-- 个人资料 -->
-        <div class="profile">
-            <!-- 头像 -->
-            <div class="avatar img-circle">
-                <img src="./uploads/avatar.jpg">
-            </div>
-            <h4>布头儿</h4>
-        </div>
         <!-- 导航菜单 -->
         <?php include('./views/common/aside.html'); ?>
     </div>
@@ -52,26 +44,14 @@
                                 <th>编号</th>
                                 <th>姓名</th>
                                 <th>昵称</th>
-                                <th>年龄</th>
+                                <th>入职日期</th>
                                 <th>性别</th>
                                 <th>手机号码</th>
                                 <th>操作</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>赵玉川</td>
-                                <td>布头儿</td>
-                                <td>28</td>
-                                <td>男</td>
-                                <td>15901256171</td>
-                                <td>
-                                    <a href="#teacherModal" data-toggle="modal" class="btn btn-info btn-xs">查 看</a>
-                                    <a href="./teacher_add.html" class="btn btn-info btn-xs">编 辑</a>
-                                    <a href="javascript::" class="btn btn-warning btn-xs">注 销</a>
-                                </td>
-                            </tr>
+                        <tbody id="teacherInfo">
+                            
                         </tbody>
                     </table>
                 </div>
@@ -129,6 +109,32 @@
             </div>
         </div>
     </div>
+    <script type="text/template" id="teacherTpl">
+    {{each list}}
+    <tr>
+        <td>{{$index+1}}</td>
+        <td>{{$value.tc_name}}</td>
+        <td>{{$value.tc_roster}}</td>
+        <td>{{$value.tc_join_date}}</td>
+        <td>
+            {{if $value.tc_gender == 1}}
+                男
+            {{else}}
+                女
+            {{/if}}
+        </td>
+        <td>{{$value.tc_cellphone}}</td>
+        <td>
+            <a href="#teacherModal" data-toggle="modal" class="btn btn-info btn-xs">查 看</a>
+            <a href="./teacher_add.html" class="btn btn-info btn-xs">编 辑</a>
+            <a href="javascript::" class="btn btn-warning btn-xs">注 销</a>
+        </td>
+    </tr>
+    {{/each}}
+    </script>
     <?php include('./views/common/script.html'); ?>
+    <script type="text/javascript">
+        require(['teacherlist']);
+    </script>
 </body>
 </html>
