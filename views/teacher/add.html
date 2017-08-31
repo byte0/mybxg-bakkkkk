@@ -37,22 +37,25 @@
                     {{/if}}
                     <label for="" class="col-xs-3 control-label">姓名</label>
                     <div class="col-xs-4">
-                        <input type="text" name="tc_name" value="{{tc_name}}" class="form-control input-sm" placeholder="讲师名称">
+                        <input data-required data-description='tc_name' data-describedby='tcNameDesc' type="text" name="tc_name" value="{{tc_name}}" class="form-control input-sm" placeholder="讲师名称">
                     </div>
+                    <div class="col-xs-2" id="tcNameDesc"></div>
                 </div>
                 {{if !tc_id}}
                 <div class="form-group">
                     <label for="" class="col-xs-3 control-label">密码</label>
                     <div class="col-xs-4">
-                        <input type="password" name="tc_pass" class="form-control input-sm">
+                        <input type="password"  data-required data-description='tc_pass' data-describedby='tcPassDesc' data-pattern='^[0-9]{6}$'  name="tc_pass" class="form-control input-sm">
                     </div>
+                    <div class="col-xs-2" id="tcPassDesc"></div>
                 </div>
                 {{/if}}
                 <div class="form-group">
                     <label for="" class="col-xs-3 control-label">入职时间</label>
                     <div class="col-xs-4">
-                        <input type="text" data-provide='datepicker' data-date-language='zh-CN' data-date-format='yyyy-mm-dd' name="tc_join_date" value="{{tc_join_date}}" class="form-control input-sm">
+                        <input type="text" data-required data-description='tc_join_date' data-describedby='tcJoinDateDesc' data-provide='datepicker' data-date-language='zh-CN' data-date-format='yyyy-mm-dd' name="tc_join_date" value="{{tc_join_date}}" class="form-control input-sm">
                     </div>
+                    <div class="col-xs-2" id="tcJoinDateDesc"></div>
                 </div>
                 <div class="form-group">
                     <label for="" class="col-xs-3 control-label">类型</label>
@@ -76,7 +79,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-xs-7">
-                        <input type="button" id="formBtn" class="btn btn-success btn-sm pull-right" value="提 交">
+                        <input type="submit" id="formBtn" class="btn btn-success btn-sm pull-right" value="提 交">
                     </div>                          
                 </div>
             </form>
