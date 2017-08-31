@@ -6,8 +6,8 @@ define(['jquery'],function($){
     },
     qs : function(key){
       // 获取URL参数中指定的参数值
-      // param是所有的参数
-      var param = location.search.substring(1);
+      // param是所有的参数（uname=lisi&age=12）
+      var param = location.search.substring(1);// 删除参数的第一个问号
       var result = null;
       if(param){
         var kvs = param.split('&');
