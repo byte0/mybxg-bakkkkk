@@ -16,9 +16,9 @@ define(['jquery','template','util','uploadify'],function($,template,util){
       // 处理课程封面的上传
       $('#upfile').uploadify({
         width : 80,
-        height :30,
+        height : 'auto',
         buttonText : '选择图片',
-        buttonClass : 'btn btn-success btn-sm upfilebtn',
+        buttonClass : 'btn btn-success btn-sm',
         itemTemplate : '<span></span>',
         fileObjName : 'cs_cover_original',
         formData : {cs_id : csId},

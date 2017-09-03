@@ -8,11 +8,6 @@ img {
   display: block;
   width: 100%;
 }
-.upfilebtn span{
-  line-height: auto;
-  display: inline-block;
-  padding-bottom: 10px;
-}
 a {
   display: inline-block;
 }
