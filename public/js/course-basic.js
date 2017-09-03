@@ -24,6 +24,22 @@ define(['jquery','template','util'],function($,template,util){
         var html = template('basicTpl',data.result);
         $('#basicInfo').html(html);
       }
+
+      // 处理二级分类的下拉联动
+      $('#firstType').change(function(){
+        $.ajax({
+          type : 'get',
+          url : '/api/category/child',
+          data : {cg_id : $(this).val()},
+          dataType : 'json',
+          success : function(data){
+            // 渲染二级分类列表
+            var tpl = '<option value="0">请选择二级分类...</option>{{each list}}<option value="{{$value.cg_id}}">{{$value.cg_name}}</option>{{/each}}';
+            var html = template.render(tpl,{list:data.result});
+            $('#secondType').html(html);
+          }
+        });
+      });
     }
   });
 
