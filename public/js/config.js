@@ -23,7 +23,8 @@ require.config({
     state : '../js/state',
     courselist : '../js/course-list',
     courseadd : '../js/course-add',
-    coursebasic : '../js/course-basic'
+    coursebasic : '../js/course-basic',
+    coursepicture : '../js/course-picture',
   },
   shim : { // 把非标准模块转化为标准模块
     bootstrap : {
