@@ -2,7 +2,7 @@ define(['jquery'],function($){
   // 工具函数
   return {
     setMenu : function(path){
-      $('.navs a[href="'+path+'"]').addClass('active');
+      $('.navs a[href="'+path+'"]').addClass('active').closest('ul').show();
     },
     qs : function(key){
       // 获取URL参数中指定的参数值
