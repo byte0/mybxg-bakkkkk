@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
     <?php include('./views/common/style.html'); ?>
+    <style type="text/css">
+    #upfile-button {
+        line-height: auto;
+    }
+    </style>
 </head>
 <body>
     
@@ -80,7 +85,7 @@
                         可上传jpg, gif, png格式文件, 图片建议尺寸大于300x150，文件大小不能超过2M。
                     </p>
                     <div class="col-xs-2">
-                        <a href="./course_add_step3.html" class="btn btn-success btn-sm">选择图片</a>
+                        <input style="line-height: auto;" type="file" id="upfile" class="btn btn-success btn-sm">
                     </div>
                     <div class="col-xs-2">
                         <a href="javascript:;" class="btn btn-warning btn-sm" disabled>裁切图片</a>
