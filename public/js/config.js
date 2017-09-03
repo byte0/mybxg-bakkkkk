@@ -21,7 +21,9 @@ require.config({
     teacheradd : '../js/teacher-add',
     settings : '../js/settings',
     state : '../js/state',
-    courselist : '../js/course-list'
+    courselist : '../js/course-list',
+    courseadd : '../js/course-add',
+    coursebasic : '../js/course-basic'
   },
   shim : { // 把非标准模块转化为标准模块
     bootstrap : {
